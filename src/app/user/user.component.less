@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  @media screen and (min-width: 860px) {
+    height: 100vh;
+  }
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: ". ." "list list";
+  width: 500px;
+}
+
+.list {
+  grid-area: list;
+}
+
+input {
+  font-size: 80px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: #c4e0e5 1px solid;
+  transition: 300ms;
+
+  &:focus {
+    border-bottom: #4ca1af 1px solid;
+  }
+}
+
+.weight-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

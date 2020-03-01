@@ -1,0 +1,35 @@
+:host {
+  display: flex;
+  @media screen and (min-width: 860px) {
+    height: 100vh;
+  }
+  align-items: center;
+  justify-content: center;
+}
+
+
+.main {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "all all . ." "all all . ." ". . . .";
+  width: 1000px;
+  @media screen and (max-width: 860px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "all all";
+  }
+}
+
+.all {
+  grid-area: all;
+
+  .progress {
+
+    font-size: 100px;
+  }
+}
+
+circle-progress {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}

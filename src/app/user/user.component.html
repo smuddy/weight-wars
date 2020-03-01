@@ -1,0 +1,22 @@
+<div class="main">
+  <div *ngIf="(user$|async) as user" class="card">
+    <app-user-info [user]="user"></app-user-info>
+  </div>
+  <div class="card">
+    <h1>Neuer Eintrag</h1>
+    <div class="detail">Ich wiege jetzt</div>
+    <input [(ngModel)]="weight" step="0.1" type="number">
+    <button (click)="addWeight()" *ngIf="weight">Absenden</button>
+
+  </div>
+
+  <div class="card list">
+    <div *ngFor="let weight of weights$|async" class="weight-item">
+      <span>{{weight.date.toDate()|date:'d.m.yyyy HH:MM'}}</span>
+      <span>{{weight.weight}}kg</span>
+    </div>
+
+  </div>
+
+
+</div>

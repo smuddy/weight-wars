@@ -1,0 +1,23 @@
+<h1>
+  {{user.name}}
+</h1>
+<div class="detail">
+  <span>Start: {{user.startWeight}}kg</span>
+  <span>aktuell: {{user.currentWeight}}kg</span>
+  <span>Ziel: {{user.targetWeight}}kg</span>
+</div>
+
+<circle-progress
+  [animationDuration]="300"
+  [animation]="true"
+  [innerStrokeColor]="'#c4e0e5'"
+  [innerStrokeWidth]="6"
+  [outerStrokeColor]="'#4ca1af'"
+  [outerStrokeWidth]="12"
+  [percent]="percent()"
+  [radius]="60"
+  [showSubtitle]="false"
+  [titleFontSize]="50"
+  [title]="round(user.startWeight-user.currentWeight)"
+  [units]="'kg'"
+></circle-progress>
