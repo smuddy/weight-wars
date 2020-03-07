@@ -5,12 +5,14 @@ import {AngularFirestore} from '@angular/fire/firestore';
 import {combineLatest, Observable} from 'rxjs';
 import * as firebase from 'firebase';
 import {map} from 'rxjs/operators';
+import {cardAnimation} from '../animation';
 import Timestamp = firebase.firestore.Timestamp;
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.less']
+  styleUrls: ['./user.component.less'],
+  animations: [cardAnimation]
 })
 export class UserComponent implements OnInit {
   public user$: Observable<User>;

@@ -1,5 +1,5 @@
-<div class="main">
-  <div *ngIf="(user$|async) as user" class="card">
+<div *ngIf="(user$|async) as user" @cardAnimation class="main">
+  <div class="card">
     <app-user-info [user]="user"></app-user-info>
   </div>
   <div class="card">
@@ -18,13 +18,12 @@
       [view]="view"
       [xAxis]="xAxis"
       [yAxis]="yAxis"
-
     >
     </ngx-charts-line-chart>
   </div>
 
   <div class="card list">
-    <div *ngFor="let weight of weights$|async" class="weight-item">
+    <div *ngFor="let weight of weights$|async" @cardAnimation class="weight-item">
       <span>{{weight.date.toDate()|date:'d.M.yyyy HH:mm'}}</span>
       <span>{{weight.weight| number:'1.1-1'}}kg</span>
     </div>

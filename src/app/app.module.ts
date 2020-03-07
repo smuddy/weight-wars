@@ -10,6 +10,7 @@ import {NgCircleProgressModule} from 'ng-circle-progress';
 import {DashboardModule} from './dashboard/dashboard.module';
 import {UserModule} from './user/user.module';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence({synchronizeTabs: true}),
