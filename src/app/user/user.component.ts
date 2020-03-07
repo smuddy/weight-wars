@@ -25,7 +25,7 @@ export class UserComponent implements OnInit {
   animations: boolean = true;
   xAxis: boolean = true;
   yAxis: boolean = true;
-  view: any[] = [300, 200];
+  view: any[] = [10, 10];
 
   constructor(
     private afs: AngularFirestore,
@@ -43,6 +43,7 @@ export class UserComponent implements OnInit {
       this.chart$ = combineLatest([this.user$, this.weights$]).pipe(map(_ => {
         const user = _[0];
         const weight = _[1];
+        setTimeout(() => this.onResize(), 100);
 
         return [
           {
@@ -63,6 +64,7 @@ export class UserComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize() {
+    if (!this.chartContainer) return;
     const width = this.chartContainer.nativeElement.clientWidth;
     this.view = [width - 20, width / 3];
   }
