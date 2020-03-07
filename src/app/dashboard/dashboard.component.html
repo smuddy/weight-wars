@@ -4,26 +4,26 @@
       Gesamtfortschritt
     </h1>
     <div class="detail">
-      <span>Start: {{progress.startWeight}}kg</span>
-      <span>aktuell: {{progress.currentWeight}}kg</span>
-      <span>Ziel: {{progress.targetWeight}}kg</span>
+      <span>Start: {{progress.startWeight| number:'1.1-1'}}kg</span>
+      <span>aktuell: {{progress.currentWeight| number:'1.1-1'}}kg</span>
+      <span>Ziel: {{progress.targetWeight| number:'1.1-1'}}kg</span>
     </div>
     <circle-progress
       [animationDuration]="300"
       [animation]="true"
       [innerStrokeColor]="'#C7E596'"
       [innerStrokeWidth]="8"
-      [maxPercent]="(progress.startWeight-progress.targetWeight)"
       [outerStrokeColor]="'#78C000'"
       [outerStrokeWidth]="16"
-      [percent]="(progress.startWeight-progress.currentWeight)"
+      [percent]="percent(progress)"
       [radius]="150"
       [showSubtitle]="false"
       [titleFontSize]="130"
-      [title]="(progress.startWeight-progress.currentWeight)"
-      [units]="'kg'"
+      [units]="'%'"
     ></circle-progress>
     <button *ngIf="user()" routerLink="/user/{{user()}}">Meine Einträge</button>
+    <input *ngIf="!user()" [(ngModel)]="userInput" type="text">
+    <button *ngIf="!user()" routerLink="/user/{{userInput}}">Meine Einträge</button>
   </div>
   <div *ngFor="let user of users$|async" class="card">
     <app-user-info [user]="user"></app-user-info>

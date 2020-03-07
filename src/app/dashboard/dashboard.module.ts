@@ -4,6 +4,7 @@ import {DashboardComponent} from './dashboard.component';
 import {NgCircleProgressModule} from 'ng-circle-progress';
 import {UserInfoModule} from '../shared/user-info/user-info.module';
 import {RouterModule} from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import {RouterModule} from '@angular/router';
     NgCircleProgressModule,
     UserInfoModule,
     RouterModule,
+    FormsModule,
   ]
 })
 export class DashboardModule {

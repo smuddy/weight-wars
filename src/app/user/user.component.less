@@ -9,12 +9,20 @@
 
 .main {
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: ". ." "list list";
+  grid-template-areas: ". ." "chart chart" "list list" "back-button back-button";
   width: 500px;
+}
+
+.chart {
+  grid-area: chart;
 }
 
 .list {
   grid-area: list;
+}
+
+.back-button {
+  grid-area: back-button;
 }
 
 input {
@@ -24,6 +32,7 @@ input {
   outline: none;
   border-bottom: #c4e0e5 1px solid;
   transition: 300ms;
+  padding: 0;
 
   &:focus {
     border-bottom: #4ca1af 1px solid;

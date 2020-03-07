@@ -9,6 +9,7 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {NgCircleProgressModule} from 'ng-circle-progress';
 import {DashboardModule} from './dashboard/dashboard.module';
 import {UserModule} from './user/user.module';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import {UserModule} from './user/user.module';
     NgCircleProgressModule.forRoot(),
 
     DashboardModule,
-    UserModule
+    UserModule,
+
+    NgxChartsModule,
 
   ],
   providers: [],

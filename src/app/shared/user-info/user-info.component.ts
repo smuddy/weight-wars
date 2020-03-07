@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {User} from '../../model/user';
+import {Progress, User} from '../../model/user';
 
 @Component({
   selector: 'app-user-info',
@@ -17,5 +17,9 @@ export class UserInfoComponent {
     this.round(
       ((this.user.startWeight - this.user.currentWeight) /
         (this.user.startWeight - this.user.targetWeight)) * 100
+    );
+  public difference = (progress: Progress) =>
+    this.round(
+      (progress.startWeight - progress.targetWeight) - (progress.startWeight - progress.currentWeight)
     );
 }

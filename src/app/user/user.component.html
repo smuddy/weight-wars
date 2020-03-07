@@ -10,13 +10,28 @@
 
   </div>
 
-  <div class="card list">
-    <div *ngFor="let weight of weights$|async" class="weight-item">
-      <span>{{weight.date.toDate()|date:'d.m.yyyy HH:MM'}}</span>
-      <span>{{weight.weight}}kg</span>
-    </div>
+  <div #chart class="card chart">
+    <ngx-charts-line-chart
+      [autoScale]="true"
+      [results]="chart$|async"
+      [showRefLabels]="false"
+      [view]="view"
+      [xAxis]="xAxis"
+      [yAxis]="yAxis"
 
+    >
+    </ngx-charts-line-chart>
   </div>
 
+  <div class="card list">
+    <div *ngFor="let weight of weights$|async" class="weight-item">
+      <span>{{weight.date.toDate()|date:'d.M.yyyy HH:mm'}}</span>
+      <span>{{weight.weight| number:'1.1-1'}}kg</span>
+    </div>
+  </div>
+
+  <div class="card back-button">
+    <button routerLink="/dashboard">Übersicht</button>
+  </div>
 
 </div>

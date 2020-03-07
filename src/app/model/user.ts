@@ -9,6 +9,7 @@ export interface Progress {
 
 export interface User extends Progress {
   name: string;
+  lastUpdate: Timestamp;
 }
 
 export interface Weight {

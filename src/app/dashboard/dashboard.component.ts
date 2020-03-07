@@ -32,5 +32,20 @@ export class DashboardComponent {
   }
 
   public user = () => localStorage.getItem('user');
+  public userInput: string = null;
+
+  public round(input: number): number {
+    return Math.floor(input);
+  }
+
+  public percent = (progress: Progress) =>
+    this.round(
+      ((progress.startWeight - progress.currentWeight) /
+        (progress.startWeight - progress.targetWeight)) * 100
+    );
+  public difference = (progress: Progress) =>
+    this.round(
+      (progress.startWeight - progress.targetWeight) - (progress.startWeight - progress.currentWeight)
+    );
 
 }
