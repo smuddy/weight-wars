@@ -1,8 +1,8 @@
-<div *ngIf="(user$|async) as user" @cardAnimation class="main">
-  <div class="card">
+<div *ngIf="(user$|async) as user" [@cardAnimation] class="main">
+  <div [@cardAnimation] class="card">
     <app-user-info [user]="user"></app-user-info>
   </div>
-  <div class="card">
+  <div [@cardAnimation] class="card">
     <h1>Neuer Eintrag</h1>
     <div class="detail">Ich wiege jetzt</div>
     <input [(ngModel)]="weight" step="0.1" type="number">
@@ -10,7 +10,7 @@
 
   </div>
 
-  <div #chart class="card chart">
+  <div #chart [@cardAnimation] class="card chart">
     <ngx-charts-line-chart
       [autoScale]="true"
       [results]="chart$|async"
@@ -22,14 +22,14 @@
     </ngx-charts-line-chart>
   </div>
 
-  <div class="card list">
+  <div [@cardAnimation] class="card list">
     <div *ngFor="let weight of weights$|async" @cardAnimation class="weight-item">
       <span>{{weight.date.toDate()|date:'d.M.yyyy HH:mm'}}</span>
       <span>{{weight.weight| number:'1.1-1'}}kg</span>
     </div>
   </div>
 
-  <div class="card back-button">
+  <div [@cardAnimation] class="card back-button">
     <button routerLink="/dashboard">Übersicht</button>
   </div>
 

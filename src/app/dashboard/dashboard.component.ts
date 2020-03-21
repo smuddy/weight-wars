@@ -3,11 +3,13 @@ import {Observable} from 'rxjs';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {map} from 'rxjs/operators';
 import {Progress, User} from '../model/user';
+import {cardAnimation} from '../animation';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.less']
+  styleUrls: ['./dashboard.component.less'],
+  animations: [cardAnimation]
 })
 export class DashboardComponent {
 

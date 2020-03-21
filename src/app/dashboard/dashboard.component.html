@@ -1,9 +1,9 @@
-<div class="main">
-  <div *ngIf="(progress$|async) as progress" class="card all">
+<div *ngIf="(progress$|async) as progress" [@cardAnimation]="progress" class="main">
+  <div [@cardAnimation]="progress" class="card all">
     <h1>
       Gesamtfortschritt
     </h1>
-    <div class="detail">
+    <div [@cardAnimation]="progress" class="detail">
       <span>Start: {{progress.startWeight| number:'1.1-1'}}kg</span>
       <span>aktuell: {{progress.currentWeight| number:'1.1-1'}}kg</span>
       <span>Ziel: {{progress.targetWeight| number:'1.1-1'}}kg</span>
@@ -25,7 +25,7 @@
     <input *ngIf="!user()" [(ngModel)]="userInput" type="text">
     <button *ngIf="!user()" routerLink="/user/{{userInput}}">Meine Einträge</button>
   </div>
-  <div *ngFor="let user of users$|async" class="card">
+  <div *ngFor="let user of users$|async" [@cardAnimation]="progress" class="card">
     <app-user-info [user]="user"></app-user-info>
   </div>
 </div>

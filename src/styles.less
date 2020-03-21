@@ -3,9 +3,15 @@ h1 {
 }
 
 body {
-  background: linear-gradient(to right, #4ca1af, #c4e0e5);
   font-family: 'Lato', sans-serif;
   margin: 0;
+  background: #c4e0e5;
+  @media screen and (min-width: 860px) {
+    display: inline-block;
+    min-width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(to right, #4ca1af, #c4e0e5);
+  }
 }
 
 .card {

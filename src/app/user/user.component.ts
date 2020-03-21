@@ -38,7 +38,9 @@ export class UserComponent implements OnInit {
       localStorage.setItem('user', _.id);
       this.id = _.id;
       this.user$ = this.afs.doc<User>('/user/' + _.id).valueChanges();
-      this.weights$ = this.afs.collection<Weight>('/user/' + _.id + '/weight').valueChanges();
+      this.weights$ = this.afs.collection<Weight>('/user/' + _.id + '/weight').valueChanges().pipe(
+        map(_ => _.sort((a, b) => b.date.seconds - a.date.seconds))
+      );
 
       this.chart$ = combineLatest([this.user$, this.weights$]).pipe(map(_ => {
         const user = _[0];
