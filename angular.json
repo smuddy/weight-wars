@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "weight-wars": {
+    "fat-fighters": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/weight-wars",
+            "outputPath": "dist/fat-fighters",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -75,18 +75,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "weight-wars:build"
+            "browserTarget": "fat-fighters:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "weight-wars:build:production"
+              "browserTarget": "fat-fighters:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "weight-wars:build"
+            "browserTarget": "fat-fighters:build"
           }
         },
         "test": {
@@ -123,18 +123,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "weight-wars:serve"
+            "devServerTarget": "fat-fighters:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "weight-wars:serve:production"
+              "devServerTarget": "fat-fighters:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "weight-wars",
+  "defaultProject": "fat-fighters",
   "cli": {
     "analytics": "be8614b1-7067-4bc3-ada2-ded679a2d6a6"
   }

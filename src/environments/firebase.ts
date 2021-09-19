@@ -1,9 +1,8 @@
 export const firebase = {
-  apiKey: "AIzaSyAQH0W7S2Lz1CvMinQbO62Eqo228EeJ4fE",
-  authDomain: "weight-wars.firebaseapp.com",
-  databaseURL: "https://weight-wars.firebaseio.com",
-  projectId: "weight-wars",
-  storageBucket: "weight-wars.appspot.com",
-  messagingSenderId: "285669438420",
-  appId: "1:285669438420:web:19110b0770783865389c41"
+  apiKey: 'AIzaSyAQOudO0WIJJUoqQTie_ixyETrxuKazqgU',
+  authDomain: 'fat-fighters.firebaseapp.com',
+  projectId: 'fat-fighters',
+  storageBucket: 'fat-fighters.appspot.com',
+  messagingSenderId: '848245299135',
+  appId: '1:848245299135:web:00a99c4553ccbe7e7b730a'
 };

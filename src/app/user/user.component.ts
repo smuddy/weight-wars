@@ -54,8 +54,8 @@ export class UserComponent implements OnInit {
           }, {
             name: 'Ideallinie',
             series: [
-              {name: new Date(2020, 2, 0), value: user.startWeight},
-              {name: new Date(2020, 8, 0), value: user.targetWeight},
+              {name: new Date(2021, 8, 17), value: user.startWeight},
+              {name: new Date(2022, 8, 17), value: user.targetWeight},
             ]
           }
         ]
