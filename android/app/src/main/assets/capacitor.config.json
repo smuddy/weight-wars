@@ -1,0 +1,6 @@
+{
+  "appId": "de.fatfighters.app",
+  "appName": "fat-fighters",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
